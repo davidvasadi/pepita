@@ -1,0 +1,56 @@
+@use 'variables' as *;
+@use 'sass:color';
+
+// Responsive breakpoints / Reszponzív töréspontok
+@mixin respond-to($bp) {
+    @if $bp == sm {
+        @media (min-width: $bp-sm) { @content; }
+    } @else if $bp == md {
+        @media (min-width: $bp-md) { @content; }
+    } @else if $bp == lg {
+        @media (min-width: $bp-lg) { @content; }
+    } @else if $bp == xl {
+        @media (min-width: $bp-xl) { @content; }
+    }
+}
+
+// Flex helpers / Flex segédek
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+// Centered container / Középre zárt konténer
+@mixin container {
+    width: 100%;
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: 0 $grid-gap;
+}
+
+// Primary button / Elsődleges gomb
+@mixin btn-primary {
+    display: inline-block;
+    width: 100%;
+    padding: 16px 32px;
+    border: none;
+    background-color: $color-primary;
+    color: $color-white;
+    font-family: $font-main;
+    font-size: $font-size-base;
+    font-weight: $font-weight-regular;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: color.adjust($color-primary, $lightness: -10%);
+    }
+}

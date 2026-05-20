@@ -1,0 +1,156 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.tickets {
+    padding: $grid-gap;
+
+    // Hero
+    &__hero {
+        margin-bottom: $grid-gap * 2;
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: 32px;
+            font-weight: $font-weight-regular;
+            color: $color-dark;
+            line-height: 1.2;
+        }
+
+        p {
+            color: $color-primary;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+    }
+
+    // Day tabs / Napválasztó fülek
+    &__tabs {
+        @include flex-between;
+        margin-bottom: $grid-gap;
+        border-bottom: 1px solid $color-gray;
+
+        &-item {
+            flex: 1;
+            position: relative;
+            padding: 12px 0;
+            text-align: center;
+            font-size: 16px;
+            color: $color-gray;
+            cursor: pointer;
+            transition: color 0.2s ease;
+
+            &:hover {
+                color: $color-dark;
+            }
+
+            &.is-active {
+                color: $color-dark;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -1px;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background-color: $color-primary;
+                }
+            }
+        }
+    }
+
+    // Opening date and hours / Dátum és nyitvatartás
+    &__date {
+        margin-bottom: $grid-gap * 2;
+        text-align: center;
+
+        p {
+            font-size: 14px;
+            color: $color-dark;
+            line-height: 1.6;
+        }
+    }
+
+    // Ticket rows with steppers / Jegysorok léptetőkkel
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: $grid-gap * 1.5;
+        margin-bottom: $grid-gap * 2;
+    }
+
+    &__row {
+        @include flex-between;
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        &-label {
+            font-size: 18px;
+            color: $color-dark;
+        }
+
+        &-sublabel {
+            font-size: 13px;
+            color: $color-gray;
+        }
+
+        &-counter {
+            @include flex-center;
+            gap: 12px;
+        }
+
+        &-btn {
+            @include flex-center;
+            width: 32px;
+            height: 32px;
+            border: 1px solid $color-gray;
+            background: none;
+            font-size: 18px;
+            color: $color-dark;
+            cursor: pointer;
+            transition: border-color 0.2s ease;
+
+            &:hover {
+                border-color: $color-dark;
+            }
+        }
+
+        &-count {
+            min-width: 24px;
+            text-align: center;
+            font-size: 18px;
+            color: $color-dark;
+        }
+    }
+
+    // Total price row / Végösszeg sor
+    &__total {
+        @include flex-between;
+        padding-top: $grid-gap;
+        margin-bottom: $grid-gap * 2;
+        border-top: 1px solid $color-primary;
+
+        &-label,
+        &-price {
+            font-size: 18px;
+            color: $color-dark;
+        }
+    }
+
+    // Cta
+    &__cta {
+        @include btn-primary;
+        box-shadow: 0 4px 12px rgba($color-primary, 0.3);
+    }
+
+    // Desktop 
+    @include respond-to(lg) {
+        @include container;
+        padding-top: $grid-gap * 2;
+        padding-bottom: $grid-gap * 2;
+    }
+}

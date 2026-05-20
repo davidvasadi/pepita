@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Art Museum — Tickets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <nav class="offcanvas" id="offcanvas">
+    <div class="offcanvas__search">
+      <img src="public/icons/search.svg" alt="Search icon" />
+      <input type="text" placeholder="Search" />
+    </div>
+    <ul class="offcanvas__nav">
+      <li class="offcanvas__item">
+        <img src="public/icons/exhibitions.svg" alt="Exhibitions and Events icon" />
+        Exhibitions & Events
+      </li>
+      <li class="offcanvas__item">
+        <img src="public/icons/artists.svg" alt="Artists and Artworks icon" />
+        Artists & Artworks
+      </li>
+      <li class="offcanvas__item">
+        <img src="public/icons/collections.svg" alt="Collections icon" />
+        <a href="index.html">
+        Collections
+        </a>
+      </li>
+      <li class="offcanvas__item">
+        <img src="public/icons/plan.svg" alt="Plan Your Visit icon" />
+         <a href="tickets.html">
+        Plan Your Visit
+        </a>
+      </li>
+      <li class="offcanvas__item">
+        <img src="public/icons/member.svg" alt="Become a Member icon" />
+        Become a Member
+      </li>
+      <li class="offcanvas__item">
+        <img src="public/icons/shop.svg" alt="Shop icon" />
+        Shop
+      </li>
+    </ul>
+  </nav>
+<div class="container">
+  <header class="header">
+    <div class="header__logo">
+      The<br />Art<br />Museum
+    </div>
+    <span class="header__title">Plan Your Visit</span>
+    <button class="header__burger" id="burgerBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+</div>
+  <main class="tickets">
+    <div class="tickets__hero">
+      <h1>Skip the Line.<br />Purchase Tickets.</h1>
+      <p>All exhibitions, audio tours, and films<br />included in the price of admission.</p>
+    </div>
+
+    <div class="tickets__tabs">
+      <div class="tickets__tabs-item" data-tab="today">Today</div>
+      <div class="tickets__tabs-item is-active" data-tab="tomorrow">Tomorrow</div>
+      <div class="tickets__tabs-item" data-tab="other">Other</div>
+    </div>
+
+    <div class="tickets__date">
+      <p>March 22, 2016</p>
+      <p>Open 10:30am-5:30pm</p>
+    </div>
+
+    <div class="tickets__list">
+      <div class="tickets__row">
+        <div class="tickets__row-info">
+          <span class="tickets__row-label">Adults</span>
+        </div>
+        <div class="tickets__row-counter">
+          <button class="tickets__row-btn" data-action="decrease" data-target="adults">-</button>
+          <span class="tickets__row-count" id="adults">2</span>
+          <button class="tickets__row-btn" data-action="increase" data-target="adults">+</button>
+        </div>
+      </div>
+
+      <div class="tickets__row">
+        <div class="tickets__row-info">
+          <span class="tickets__row-label">Seniors</span>
+          <span class="tickets__row-sublabel">65+ with ID</span>
+        </div>
+        <div class="tickets__row-counter">
+          <button class="tickets__row-btn" data-action="decrease" data-target="seniors">-</button>
+          <span class="tickets__row-count" id="seniors">0</span>
+          <button class="tickets__row-btn" data-action="increase" data-target="seniors">+</button>
+        </div>
+      </div>
+
+      <div class="tickets__row">
+        <div class="tickets__row-info">
+          <span class="tickets__row-label">Students</span>
+          <span class="tickets__row-sublabel">with ID</span>
+        </div>
+        <div class="tickets__row-counter">
+          <button class="tickets__row-btn" data-action="decrease" data-target="students">-</button>
+          <span class="tickets__row-count" id="students">0</span>
+          <button class="tickets__row-btn" data-action="increase" data-target="students">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tickets__total">
+      <span class="tickets__total-label">Total</span>
+      <span class="tickets__total-price" id="total">$16</span>
+    </div>
+
+    <button class="tickets__cta">Continue to Payment</button>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>

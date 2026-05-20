@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Art Museum — Collections</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <nav class="offcanvas" id="offcanvas">
+        <div class="offcanvas__search">
+            <img src="public/icons/search.svg" alt="Search icon" />
+            <div class="offcanvas__search-box">
+                <input type="text" placeholder="Search" />
+            </div>
+        </div>
+        <ul class="offcanvas__nav">
+            <li class="offcanvas__item">
+                <img src="public/icons/exhibitions.svg" alt="Exhibitions and Events icon" />
+                Exhibitions & Events
+            </li>
+            <li class="offcanvas__item">
+                <img src="public/icons/artists.svg" alt="Artists and Artworks icon" />
+                Artists & Artworks
+            </li>
+            <li class="offcanvas__item">
+                <img src="public/icons/collections.svg" alt="Collections icon" />
+                <a href="index.html">
+                    Collections
+                </a>
+            </li>
+            <li class="offcanvas__item">
+                <img src="public/icons/plan.svg" alt="Plan Your Visit icon" />
+                <a href="tickets.html">
+                    Plan Your Visit
+                </a>
+            </li>
+            <li class="offcanvas__item">
+                <img src="public/icons/member.svg" alt="Become a Member icon" />
+                Become a Member
+            </li>
+            <li class="offcanvas__item">
+                <img src="public/icons/shop.svg" alt="Shop icon" />
+                Shop
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <header class="header">
+            <div class="header__logo">
+                The<br />Art<br />Museum
+            </div>
+            <span class="header__title">Collections</span>
+            <button class="header__burger" id="burgerBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </header>
+    </div>
+    <main class="collections">
+        <div class="collections__search">
+            <input type="text" placeholder="Explore the Collection" />
+            <img src="public/icons/search-red.svg" alt="Search icon" />
+        </div>
+        <a href="#" class="collections__advanced">Advanced Search</a>
+
+        <div class="collections__grid">
+            <div class="collections__item">
+                <div class="collections__image">
+                    <img src="public/images/decorative.png" alt="Decorative Arts & Crafts" />
+                </div>
+                <span class="collections__name">Decorative<br />Arts & Crafts</span>
+            </div>
+            <div class="collections__item">
+                <div class="collections__image">
+                    <img src="public/images/impressionism.png" alt="American Impressionism" />
+                </div>
+                <span class="collections__name">American<br />Impressionism</span>
+            </div>
+            <div class="collections__item">
+                <div class="collections__image">
+                    <img src="public/images/destijl.png" alt="De Stijl" />
+                </div>
+                <span class="collections__name">De Stijl</span>
+            </div>
+            <div class="collections__item">
+                <div class="collections__image">
+                    <img src="public/images/cubism.png" alt="Cubism" />
+                </div>
+                <span class="collections__name">Cubism</span>
+            </div>
+            <div class="collections__item">
+                <div class="collections__image">
+                    <img src="public/images/american.png" alt="American" />
+                </div>
+                <span class="collections__name">American</span>
+            </div>
+            <div class="collections__item">
+                <div class="collections__image">
+                    <img src="public/images/greek.png" alt="Greek Antiquities" />
+                </div>
+                <span class="collections__name">Greek Antiquities</span>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

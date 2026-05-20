@@ -1,0 +1,149 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Header
+.header {
+    @include flex-between;
+    height: $header-height;
+    background-color: $color-white;
+    position: relative;
+    z-index: 100;
+
+    &__logo {
+        font-family: $font-main;
+        font-size: 11px;
+        font-weight: $font-weight-regular;
+        line-height: 1.3;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: $color-dark;
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: $font-weight-regular;
+        color: $color-primary;
+    }
+
+    &__burger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 4px;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: $color-dark;
+        }
+    }
+}
+
+// Menu overlay 
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    &.is-open {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+// Offcanvas menu / Kicsúszó menü
+.offcanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 85%;
+    max-width: 375px;
+    height: 100%;
+    z-index: 300;
+    padding: $grid-gap;
+    display: flex;
+    flex-direction: column;
+    gap: $grid-gap;
+    background-color: $color-primary;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+
+    &.is-open {
+        transform: translateX(0);
+        box-shadow: 4px 0 20px rgba($color-dark, 0.3);
+    }
+
+    &__search {
+        @include flex-between;
+        gap: 24px;
+
+        img {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        &-box {
+            flex: 1;
+            border: 2px solid $color-white;
+            padding: 10px 14px;
+
+            input {
+                width: 100%;
+                background: none;
+                border: none;
+                outline: none;
+                color: $color-white;
+                font-family: $font-main;
+                font-size: $font-size-base;
+
+                &::placeholder {
+                    color: $color-white;
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 14px 0;
+        color: $color-white;
+        font-size: 18px;
+        font-weight: $font-weight-regular;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        img {
+            width: 24px;
+            height: 24px;
+            fill: none;
+            stroke: $color-white;
+            stroke-width: 1.5;
+            flex-shrink: 0;
+        }
+    }
+
+    @include respond-to(lg) {
+        width: 400px;
+    }
+}
